@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/view/main_screen.dart';
 import 'package:pokedex/view/welcome_screen.dart';
 
 void main() {
@@ -10,9 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: WellcomeScreen(),
+      home: const WellcomeScreen(),
+      routes: {
+        '/home': (context) => const MainScreen(),
+      },
     );
   }
 }

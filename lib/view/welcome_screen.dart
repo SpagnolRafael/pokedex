@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pokedex/shared/app_colors.dart';
-import 'package:pokedex/shared/custom_button.dart';
-import 'package:pokedex/shared/images.dart';
+import 'package:pokedex/shared/widgets/custom_button.dart';
+import 'package:pokedex/shared/assets.dart';
 import 'package:pokedex/shared/screen_size.dart';
 
 class WellcomeScreen extends StatelessWidget {
@@ -17,16 +17,15 @@ class WellcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              //TODO: edit logo invisible height
               Stack(
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(top: 35),
-                    child: Image.asset(Images.welcomeImage),
+                    child: Image.asset(Assets.welcomeImage),
                   ),
                   Positioned(
                     left: 50,
-                    child: Image.asset(Images.logo),
+                    child: Image.asset(Assets.logo),
                   ),
                 ],
               ),
@@ -40,7 +39,7 @@ class WellcomeScreen extends StatelessWidget {
                       'Nunito',
                       textStyle: const TextStyle(
                         fontFamily: 'Nunito',
-                        color: AppColors.titleOne,
+                        color: AppColors.title,
                         fontWeight: FontWeight.w700,
                         fontSize: 35,
                       ),
@@ -54,7 +53,7 @@ class WellcomeScreen extends StatelessWidget {
                             fontFamily: 'Nunito',
                             fontWeight: FontWeight.w600,
                             fontSize: 35,
-                            color: AppColors.titleTwo,
+                            color: AppColors.subtitle,
                           ),
                         ),
                       ),
@@ -71,15 +70,23 @@ class WellcomeScreen extends StatelessWidget {
                     fontFamily: 'Nunito',
                     fontWeight: FontWeight.w400,
                     fontSize: 16,
-                    color: AppColors.titleOne,
+                    color: AppColors.title,
                   ),
                 ),
               ),
               const SizedBox(height: 19),
               CustomButton(
+                boxShadow: const [
+                  BoxShadow(
+                      color: AppColors.subtitle,
+                      offset: Offset(0, 4),
+                      blurRadius: 15),
+                ],
+                radius: 5,
+                path: Assets.arrowNext,
                 width: ScreenSize.width(context) * 60 / 100,
                 text: 'Começar',
-                color: AppColors.titleTwo,
+                color: AppColors.subtitle,
                 style: GoogleFonts.getFont(
                   'Nunito',
                   textStyle: const TextStyle(
@@ -89,9 +96,7 @@ class WellcomeScreen extends StatelessWidget {
                     fontSize: 18,
                   ),
                 ),
-                onTap: () {
-                  print(ScreenSize.heigh(context).toString());
-                },
+                onTap: () => Navigator.pushNamed(context, '/home'),
               )
             ],
           ),
