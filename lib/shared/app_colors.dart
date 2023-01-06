@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  //TODO: Change colors name
   static const title = Color(0xff2F3E77);
 
   static const subtitle = Color(0xffEA686D);
+
+  static final cardShadow = const Color.fromARGB(0, 0, 0, 0)
+      .withAlpha(1)
+      .withBlue(1)
+      .withGreen(1)
+      .withRed(1);
 
   static const white = Colors.white;
 
@@ -25,4 +30,14 @@ class AppColors {
   static const elementStone = Color(0xff383332);
 
   static const elementNormal = Color(0xff49D0B0);
+
+  static const pokecardTitle = Color(0xff233674);
+
+  static const pokeDetailImg = Color(0xffF7F1F1);
+
+  static const life = Color(0xffF7802A);
+
+  static const attack = Color(0xffEA686D);
+
+  static const defense = Color(0xffC4F789);
 }
