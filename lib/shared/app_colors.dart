@@ -31,6 +31,18 @@ class AppColors {
 
   static const elementNormal = Color(0xff49D0B0);
 
+  static const elementIce = Color.fromARGB(255, 144, 178, 206);
+  static const elementFlying = Color.fromARGB(255, 184, 193, 101);
+  static const elementPoison = Color.fromARGB(255, 2, 164, 2);
+  static const elementBug = Color.fromARGB(255, 67, 42, 5);
+  static const elementGhost = Color.fromARGB(255, 150, 150, 150);
+  static const elementSteel = Color.fromARGB(255, 40, 42, 44);
+  static const elementGrass = Color.fromARGB(255, 2, 244, 82);
+  static const elementElectric = Color.fromARGB(255, 234, 255, 142);
+  static const elementDragon = Color.fromARGB(255, 234, 0, 0);
+  static const elementShadow = Color.fromARGB(255, 0, 0, 0);
+  static const elementFairy = Color.fromARGB(255, 194, 28, 156);
+
   static const pokecardTitle = Color(0xff233674);
 
   static const pokeDetailImg = Color(0xffF7F1F1);

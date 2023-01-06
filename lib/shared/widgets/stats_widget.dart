@@ -10,25 +10,34 @@ class StatsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(2),
-        color: Colors.black,
-      ),
-      height: 7.94,
-      width: stats * 203.55 / 100,
-      child: Container(
-        height: 7.94,
-        width: stats * .99,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(2),
-          color: type == StatsType.life
-              ? AppColors.life
-              : type == StatsType.attack
-                  ? AppColors.attack
-                  : AppColors.defense,
+    return Stack(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(2),
+            color: Colors.white,
+          ),
+          height: 7.94,
+          width: 203.55,
         ),
-      ),
+        Container(
+          height: 7.94,
+          width: stats * 203.55 / 100,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(2),
+            color: type == StatsType.life
+                ? AppColors.life
+                : type == StatsType.attack
+                    ? AppColors.attack
+                    : AppColors.defense,
+          ),
+        ),
+      ],
     );
   }
 }
+
+    //LARGURA 203.55 (PELO FIGMA)
+
+    //203.55 - 100%
+    // X - 45%

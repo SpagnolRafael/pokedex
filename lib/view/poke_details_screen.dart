@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pokedex/dtos/pokemon_dto.dart';
 import 'package:pokedex/shared/app_colors.dart';
 import 'package:pokedex/shared/screen_size.dart';
+import 'package:pokedex/shared/widgets/filter_element_widget.dart';
 import 'package:pokedex/shared/widgets/stats_widget.dart';
 import 'package:pokedex/view/home_page/components/header.dart';
 
@@ -68,17 +69,33 @@ class _PokeDetailsScreenState extends State<PokeDetailsScreen> {
                       ),
                     ),
                   ),
-                  Text(
-                    'Cod: ${pokeDetails.id ?? '#Não localizado'}',
-                    style: GoogleFonts.getFont(
-                      'Nunito',
-                      textStyle: const TextStyle(
-                        fontFamily: 'Nunito',
-                        color: AppColors.pokecardTitle,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Cod: #00${pokeDetails.id ?? '#Não localizado'}',
+                        style: GoogleFonts.getFont(
+                          'Nunito',
+                          textStyle: const TextStyle(
+                            fontFamily: 'Nunito',
+                            color: AppColors.pokecardTitle,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                          ),
+                        ),
                       ),
-                    ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 20.0),
+                        child: FilterElementType(
+                          label: ElementTypeExt.label(ElementTypeExt.fromType(
+                              pokeDetails.types.length > 1
+                                  ? pokeDetails.types[1].type.name
+                                  : pokeDetails.types[0].type.name)),
+                          color: ElementTypeExt.color(ElementTypeExt.fromType(
+                              pokeDetails.types[1].type.name)),
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 16),
                   Text(
@@ -93,58 +110,98 @@ class _PokeDetailsScreenState extends State<PokeDetailsScreen> {
                       ),
                     ),
                   ),
+                  const SizedBox(height: 7),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20.0),
+                    child: Text(
+                      '"Charmeleon destrói seus oponentes sem pena com suas garras afiadas. Torna-se agressivo quando encontra um oponente forte e então a chama na ponta da sua cauda queima intensamente em uma cor azulada."',
+                      textAlign: TextAlign.justify,
+                      style: GoogleFonts.getFont(
+                        'Nunito',
+                        textStyle: const TextStyle(
+                          fontFamily: 'Nunito',
+                          color: AppColors.pokecardTitle,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              'Vida',
+                              style: GoogleFonts.getFont(
+                                'Nunito',
+                                textStyle: const TextStyle(
+                                  fontFamily: 'Nunito',
+                                  color: AppColors.pokecardTitle,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 71),
+                            StatsWidget(
+                                stats: pokeDetails.stats[0].baseStats!,
+                                type: StatsType.life),
+                          ],
+                        ),
+                        const SizedBox(height: 15),
+                        Row(
+                          children: [
+                            Text(
+                              'Defesa',
+                              style: GoogleFonts.getFont(
+                                'Nunito',
+                                textStyle: const TextStyle(
+                                  fontFamily: 'Nunito',
+                                  color: AppColors.pokecardTitle,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 58),
+                            StatsWidget(
+                                stats: pokeDetails.stats[2].baseStats!,
+                                type: StatsType.defense),
+                          ],
+                        ),
+                        const SizedBox(height: 15),
+                        Row(
+                          children: [
+                            Text(
+                              'Ataque',
+                              style: GoogleFonts.getFont(
+                                'Nunito',
+                                textStyle: const TextStyle(
+                                  fontFamily: 'Nunito',
+                                  color: AppColors.pokecardTitle,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 57),
+                            Align(
+                              alignment: Alignment.center,
+                              child: StatsWidget(
+                                  stats: pokeDetails.stats[1].baseStats!,
+                                  type: StatsType.attack),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
-              ),
-            ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              StatsWidget(
-                  stats: pokeDetails.stats[0].baseStats!, type: StatsType.life),
-              const SizedBox(height: 15),
-              StatsWidget(
-                  stats: pokeDetails.stats[2].baseStats!,
-                  type: StatsType.defense),
-              const SizedBox(height: 15),
-              StatsWidget(
-                  stats: pokeDetails.stats[1].baseStats!,
-                  type: StatsType.attack),
-            ],
-          ),
-          Text(
-            'HP: ${pokeDetails.stats[0].baseStats ?? '#Não localizado'}${pokeDetails.stats[0].stat.name}',
-            style: GoogleFonts.getFont(
-              'Nunito',
-              textStyle: const TextStyle(
-                fontFamily: 'Nunito',
-                color: AppColors.pokecardTitle,
-                fontWeight: FontWeight.w400,
-                fontSize: 14,
-              ),
-            ),
-          ),
-          Text(
-            'ATTACK: ${pokeDetails.stats[1].baseStats ?? '#Não localizado'}${pokeDetails.stats[1].stat.name}',
-            style: GoogleFonts.getFont(
-              'Nunito',
-              textStyle: const TextStyle(
-                fontFamily: 'Nunito',
-                color: AppColors.pokecardTitle,
-                fontWeight: FontWeight.w400,
-                fontSize: 14,
-              ),
-            ),
-          ),
-          Text(
-            'DEFENSE: ${pokeDetails.stats[2].baseStats ?? '#Não localizado'}${pokeDetails.stats[2].stat.name}',
-            style: GoogleFonts.getFont(
-              'Nunito',
-              textStyle: const TextStyle(
-                fontFamily: 'Nunito',
-                color: AppColors.pokecardTitle,
-                fontWeight: FontWeight.w400,
-                fontSize: 14,
               ),
             ),
           ),

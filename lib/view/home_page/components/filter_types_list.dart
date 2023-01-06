@@ -9,8 +9,8 @@ class FilterTypeList extends StatelessWidget {
     ElementType.fire,
     ElementType.normal,
     ElementType.wind,
-    ElementType.earth,
-    ElementType.stone,
+    ElementType.ground,
+    ElementType.rock,
     ElementType.water,
   ];
 

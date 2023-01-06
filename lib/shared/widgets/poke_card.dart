@@ -50,14 +50,18 @@ class PokeCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 3.4),
                   FilterElementType(
-                    label: ElementTypeExt.label(
-                        ElementTypeExt.fromType(pokemon.types[0].type.name)),
-                    color: ElementTypeExt.color(
-                        ElementTypeExt.fromType(pokemon.types[0].type.name)),
+                    label: ElementTypeExt.label(ElementTypeExt.fromType(
+                        pokemon.types.length > 1
+                            ? pokemon.types[1].type.name
+                            : pokemon.types[0].type.name)),
+                    color: ElementTypeExt.color(ElementTypeExt.fromType(
+                        pokemon.types.length > 1
+                            ? pokemon.types[1].type.name
+                            : pokemon.types[0].type.name)),
                   ),
                   const SizedBox(height: 5.6),
                   Text(
-                    '#${pokemon.id}',
+                    '#00${pokemon.id}',
                     style: GoogleFonts.getFont(
                       'Nunito',
                       textStyle: const TextStyle(

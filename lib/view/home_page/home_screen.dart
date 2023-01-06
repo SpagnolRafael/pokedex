@@ -108,7 +108,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 30.0, top: 55),
+                        padding: const EdgeInsets.only(
+                            left: 30.0, top: 55, bottom: 10),
                         child: Text(
                           'Mais procurados',
                           style: GoogleFonts.getFont(
@@ -125,9 +126,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
                 SizedBox(
-                  width: ScreenSize.width(context) * 1,
+                  width: ScreenSize.width(context),
                   child: PokeGrid(
                     pokedex: _pokedex,
                   ),
