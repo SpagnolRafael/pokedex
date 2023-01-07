@@ -4,19 +4,14 @@ import 'package:pokedex/shared/screen_size.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final TextEditingController controller;
-  const CustomTextFormField({required this.controller, super.key});
+  final void Function(String)? onChanged;
+  const CustomTextFormField(
+      {required this.controller, required this.onChanged, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.subtitle,
-              blurRadius: 15,
-              offset: Offset(0, 4),
-            ),
-          ],
           color: AppColors.white,
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(5),
@@ -28,6 +23,7 @@ class CustomTextFormField extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(bottom: 5.0),
           child: TextField(
+            onChanged: onChanged,
             controller: controller,
             autocorrect: false,
             decoration: const InputDecoration(

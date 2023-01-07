@@ -64,6 +64,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     Padding(
                       padding: const EdgeInsets.only(top: 100.0),
                       child: CustomBanner(
+                        onChanged: (query) {
+                          cubit.filterPokemons(_pokedex, query);
+                        },
                         controller: _searchController,
                       ),
                     ),
@@ -128,9 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 SizedBox(
                   width: ScreenSize.width(context),
-                  child: PokeGrid(
-                    pokedex: _pokedex,
-                  ),
+                  child: PokeGrid(pokedex: _pokedex),
                 )
               ],
             ),

@@ -7,9 +7,11 @@ import 'package:pokedex/shared/screen_size.dart';
 import 'package:pokedex/shared/widgets/custom_textfield.dart';
 
 class CustomBanner extends StatelessWidget {
+  final void Function(String)? onChanged;
   final TextEditingController controller;
   final void Function()? onTap;
-  const CustomBanner({required this.controller, this.onTap, super.key});
+  const CustomBanner(
+      {required this.controller, this.onTap, this.onChanged, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +61,7 @@ class CustomBanner extends StatelessWidget {
                   Row(
                     children: [
                       CustomTextFormField(
+                        onChanged: onChanged,
                         controller: controller,
                       ),
                       InkWell(

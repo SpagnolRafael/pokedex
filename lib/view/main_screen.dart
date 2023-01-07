@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/shared/app_colors.dart';
-import 'package:pokedex/view/favorite_screen.dart';
+import 'package:pokedex/view/favorite_page/favorite_screen.dart';
 import 'package:pokedex/view/home_page/home_screen.dart';
 import 'package:pokedex/view/my_account_screen.dart';
 

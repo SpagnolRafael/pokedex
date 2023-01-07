@@ -6,6 +6,7 @@ class Assets {
   static const elipseGroup = 'assets/images/elipse_group.png';
   static const elipse = 'assets/images/elipse.png';
   static const pikachu = 'assets/images/pikachu.png';
+  static const pokeBg = 'assets/images/pokebg.png';
 
   //SVG
   static const arrowNext = 'assets/icons/arrow_next.svg';

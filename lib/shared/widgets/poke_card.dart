@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pokedex/dtos/pokemon_dto.dart';
 import 'package:pokedex/shared/app_colors.dart';
+import 'package:pokedex/shared/assets.dart';
 import 'package:pokedex/shared/widgets/filter_element_widget.dart';
 
 class PokeCard extends StatelessWidget {
@@ -76,12 +77,18 @@ class PokeCard extends StatelessWidget {
               ),
             ),
             Column(
-              mainAxisSize: MainAxisSize.max,
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.network(
-                  pokemon.sprites.frontDefaultImage,
-                  width: 80,
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Image.asset(Assets.pokeBg, width: 75),
+                    Image.network(
+                      pokemon.sprites.frontDefaultImage,
+                      width: 80,
+                    ),
+                  ],
                 )
               ],
             ),

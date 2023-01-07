@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:pokedex/dtos/images_about.dart';
@@ -150,13 +151,13 @@ extension ElementTypeExt on ElementType {
 }
 
 @JsonSerializable()
-class Pokemon {
+class Pokemon extends Equatable {
   final int? id;
   final List<Types> types;
   final String name;
   final List<Stats> stats;
   final Sprites sprites;
-  Pokemon({
+  const Pokemon({
     this.id,
     required this.types,
     required this.name,
@@ -183,4 +184,7 @@ class Pokemon {
       _$PokemonFromJson(json);
 
   Map<String, dynamic> toJson() => _$PokemonToJson(this);
+
+  @override
+  List<Object?> get props => [name, id];
 }

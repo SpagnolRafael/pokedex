@@ -5,6 +5,8 @@ class AppColors {
 
   static const subtitle = Color(0xffEA686D);
 
+  static const iconButton = Color(0xffC4C4C4);
+
   static final cardShadow = const Color.fromARGB(0, 0, 0, 0)
       .withAlpha(1)
       .withBlue(1)
