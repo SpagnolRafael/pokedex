@@ -1,6 +1,6 @@
 # Pokedex Challenge
 
-[Portuguese]: Desafio era implementar as telas propostas no figma e consumir a api pokemon.
+[Portuguese]: Desafio era implementar as telas propostas no figma e consumir a api pokemon. <br/>
 [English]: The challenge was implements all proposed screens on figma, using pokemon api.
 
 ## Getting Started
@@ -19,21 +19,21 @@
 <img width="1226" alt="image" src="https://user-images.githubusercontent.com/105317301/211165540-3c4b0ac6-b35c-4e1f-ba8c-2a740088eade.png">
 
 
-- Funcionalidades adicionais: 
+- Funcionalidades adicionais:  <br />
 
-*Favoritar pokemon
-Icone Favorito ❤️  preenchido corresponde a favorito, enquanto não preenchido corresponde a não favorito:
+*Favoritar pokemon <br />
+Icone Favorito ❤️  preenchido corresponde a favorito, enquanto não preenchido corresponde a não favorito: <br />
 <img width="814" alt="image" src="https://user-images.githubusercontent.com/105317301/211165606-b17c6952-fee2-4577-b7d4-53e88b424962.png">
 
-*Listar favoritos
-Como de se esperar, caso nenhum pokemon seja adicionado aos favoritos, a lista estara vazia, e caso tenha selecionado alguns, a lista estara carregada:
+*Listar favoritos <br />
+Como de se esperar, caso nenhum pokemon seja adicionado aos favoritos, a lista estara vazia, e caso tenha selecionado alguns, a lista estara carregada: <br />
 <img width="822" alt="image" src="https://user-images.githubusercontent.com/105317301/211165667-03d2ddd1-f40a-4db8-903f-17a90a62f7cc.png">
 
-*Abrir Pokemon favorito
-O pokemon que está na lista de favoritos é clicavel, e caso clique em seu 'card'o mesmo abrirá os detalhes do pokemon.
+*Abrir Pokemon favorito <br />
+O pokemon que está na lista de favoritos é clicavel, e caso clique em seu 'card'o mesmo abrirá os detalhes do pokemon. <br />
 <img width="408" alt="image" src="https://user-images.githubusercontent.com/105317301/211165705-8e399651-b463-4d15-bd66-3d02d2b843a6.png">
 
-Voce pode remover o pokemon da lista de favoritos, clicando novamente no icone favorito ❤️  ou deletando na lixeira presente na lateral direita de seu 'card'.
+Voce pode remover o pokemon da lista de favoritos, clicando novamente no icone favorito ❤️  ou deletando na lixeira presente na lateral direita de seu 'card'. <br />
 <img width="400" alt="image" src="https://user-images.githubusercontent.com/105317301/211165732-69509c8b-4ad1-4729-afcb-8919e15c5155.png">
 
 
